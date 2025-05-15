@@ -1,4 +1,4 @@
-namespace DeliveryClub.Entities;
+﻿namespace DeliveryClub.Entities;
 
 public class ShiftAssignment
 {

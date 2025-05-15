@@ -1,4 +1,4 @@
-namespace DeliveryClub.DTO;
+﻿namespace DeliveryClub.DTO;
 
 public class OrderCreateDTO
 {
@@ -6,7 +6,6 @@ public class OrderCreateDTO
     public int ManagerId { get; set; }
     public string DeliveryAddress { get; set; }
     public string PaymentMethod { get; set; }
-    
     public List<OrderItemCreateDTO> OrderItems { get; set; }
 }
 

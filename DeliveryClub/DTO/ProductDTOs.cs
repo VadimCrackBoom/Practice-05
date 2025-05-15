@@ -1,4 +1,4 @@
-namespace DeliveryClub.DTO;
+﻿namespace DeliveryClub.DTO;
 
 public class ProductCreateDTO
 {

@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using DeliveryClub.Entities;
 
@@ -17,20 +17,13 @@ public class DeliveryDbContext : DbContext
     public DeliveryDbContext(DbContextOptions<DeliveryDbContext> options) : base(options)
     {
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlite("Data Source=Delivery.db")
-                .LogTo(message => Debug.WriteLine(message));
-        }
-    }
-
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Настройка отношений и ограничений
 
+        modelBuilder.Entity<ShiftAssignment>()
+            .HasKey(sa => sa.AssignmentId);
         // User - ShiftAssignment (one-to-many)
         modelBuilder.Entity<ShiftAssignment>()
             .HasOne(sa => sa.User)
